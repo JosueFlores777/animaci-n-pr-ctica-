@@ -31,7 +31,6 @@ $(window).scroll(function () {
   var parallax2 = scrollTop / 2;
   $("figure:nth-child(2)").css("transform", "translateY(" + parallax2 + "px)");
 
-  // Mueve la columna 4 a una velocidad diferente, aquí he aumentado la velocidad para un efecto más pronunciado
   var parallax4 = scrollTop / 2;
   $("figure:nth-child(4)").css("transform", "translateY(" + parallax4 + "px)");
 
@@ -54,4 +53,8 @@ $(window).scroll(function () {
   $("figure:nth-child(17)").css("transform", "translateY(" + parallax2 + "px)");
   var parallax2 = scrollTop / 2;
   $("figure:nth-child(19)").css("transform", "translateY(" + parallax2 + "px)");
+  var parallax2 = scrollTop / 2;
+  $("figure:nth-child(21)").css("transform", "translateY(" + parallax2 + "px)");
+  var parallax2 = scrollTop / 2;
+  $("figure:nth-child(23)").css("transform", "translateY(" + parallax2 + "px)");
 });
