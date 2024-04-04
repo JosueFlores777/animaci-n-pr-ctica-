@@ -1,105 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Card Stack</title>
-<style>
-  .card-stack {
-    position: relative;
-    height: 1260px;
-    width: 460px;
-    margin: 0 auto;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Stack</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-  }
+    .cardPage-stack {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-  .card {
-    margin: 0 auto;
-    position: absolute;
-    background-color: white;
-    height: 360px;
-    width: 560px;
-    border-radius: 30px;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: space-between;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-  }
+    .cardPage {
+      margin: 10px auto;
+      position: absolute;
+      background-color: white;
+      height: 360px;
+      width: 560px;
+      border-radius: 30px;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: space-between;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
 
-  .card.dark {
-    background-color: black;
-    border-color: white;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  }
+    .cardPage .dark {
+      background-color: black;
+      border-color: white;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
 
-  .card-content {
-    font-weight: normal;
-    color: #555;
-  }
+    .cardPage-content {
+      font-weight: normal;
+      color: #555;
+      margin-bottom: 20px;
+    }
 
-  .card.dark .card-content {
-    color: #ddd;
-  }
+    .card.dark .card-content {
+      color: #ddd;
+    }
 
-  .name {
-    color: #888;
-    font-weight: bold;
-  }
+    .name {
+      margin-top: -280px;
+      color: #888;
+      font-weight: bold;
+    }
 
-  .designation {
-    color: #777;
-    font-weight: normal;
-  }
-</style>
+    .designation {
+      color: #777;
+      font-weight: normal;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="card-stack" style="margin-top: 145px;">
-  <div class="card dark">
-    <div class="card-content">Content 1</div>
-    <div>
-      <p class="name">Name 1</p>
-      <p class="designation">Designation 1</p>
+  <div class="cardPage-stack" style="margin-top: 145px;">
+    <div class="cardPage dark">
+      <div class="cardPage-content">Content 1</div>
+      <div>
+        <p class="name">Name 1</p>
+        <p class="designation">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 1</p>
+      </div>
     </div>
-  </div>
-  <div class="card">
-    <div class="card-content">Content 2</div>
-    <div>
-      <p class="name">Name 2</p>
-      <p class="designation">Designation 2</p>
+    <div class="cardPage ">
+      <div class="cardPage-content">Content 2</div>
+      <div>
+        <p class="name">Name 2</p>
+        <p class="designation">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 1</p>
+      </div>
     </div>
-  </div>
-  <div class="card">
-    <div class="card-content">Content 3</div>
-    <div>
-      <p class="name">Name 3</p>
-      <p class="designation">Designation 3</p>
+    <div class="cardPage ">
+      <div class="cardPage-content">Content 3</div>
+      <div>
+        <p class="name">Name 3</p>
+        <p class="designation">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 1</p>
+      </div>
     </div>
+
+    <!-- Add more cards as needed -->
   </div>
-  <!-- Add more cards as needed -->
-</div>
 
-<script>
-  const cardStack = document.querySelector('.card-stack');
-  let cards = Array.from(cardStack.children);
+  <script>
+    const cardStack = document.querySelector('.cardPage-stack');
+    let cards = Array.from(cardStack.children);
 
-  function startFlipping() {
-    setInterval(() => {
-      const lastCard = cards.pop();
-      cards.unshift(lastCard);
-      cards.forEach((card, index) => {
-        card.style.top = `${index * -40}px`; // Adjust as needed
-        card.style.transform = `scale(${1 - index * 0.06})`; // Adjust as needed
-        card.style.zIndex = cards.length - index;
-      });
-    }, 5000);
-  }
+    function startFlipping() {
+      setInterval(() => {
+        const lastCard = cards.pop();
+        cards.unshift(lastCard);
+        cards.forEach((card, index) => {
+          card.style.top = `${index * -40}px`; 
+          card.style.transform = `scale(${1 - index * 0.06})`;
+          card.style.zIndex = cards.length - index;
+        });
+      }, 3000);
+    }
 
-  startFlipping();
-</script>
+    startFlipping();
+  </script>
 
 </body>
+
 </html>

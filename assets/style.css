@@ -337,13 +337,68 @@ h2 {
 	font-size: 2.5em;
 }
 
-/**/
+/*testimnio*/
+.cardPage-stack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.cardPage {
+  margin: 10px auto;
+  position: absolute;
+  background-color: white;
+  height: 360px;
+  width: 560px;
+  border-radius: 30px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cardPage .dark {
+  background-color: black;
+  border-color: white;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.cardPage-content {
+  font-weight: normal;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.card.dark .card-content {
+  color: #ddd;
+}
+
+.name {
+  margin-top: -280px;
+  color: #888;
+  font-weight: bold;
+}
+
+.designation {
+  color: #777;
+  font-weight: normal;
+}
 
 /**/
 @media screen and (max-width: 478px) {
 
+/*testiminoi*/
 
+.cardPage {
+
+  height: 390px;
+  width: 360px;
+
+}
 
   .scroller {
     overflow-x: hidden;
