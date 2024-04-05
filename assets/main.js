@@ -1,21 +1,33 @@
 const scrollers = document.querySelectorAll(".scroller");
 
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+        entry.target.classList.add('show'); 
+    } else {
+      entry.target.classList.remove('show'); 
+    }
+  });
+});
+
+//cart
+const hiddenElements = document.querySelectorAll('.hidden1');
+hiddenElements.forEach((el) => observer.observe(el));
+
+
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   addAnimation();
 }
 
+
+
+
 function addAnimation() {
   scrollers.forEach((scroller) => {
-    // add data-animated="true" to every `.scroller` on the page
     scroller.setAttribute("data-animated", true);
-
-    // Make an array from the elements within `.scroller-inner`
     const scrollerInner = scroller.querySelector(".scroller__inner");
     const scrollerContent = Array.from(scrollerInner.children);
-
-    // For each item in the array, clone it
-    // add aria-hidden to it
-    // add it into the `.scroller-inner`
     scrollerContent.forEach((item) => {
       const duplicatedItem = item.cloneNode(true);
       duplicatedItem.setAttribute("aria-hidden", true);
@@ -26,29 +38,22 @@ function addAnimation() {
 
 $(window).scroll(function () {
   var scrollTop = $(window).scrollTop();
-
-  // Mueve la columna 2 a la mitad de velocidad
   var parallax2 = scrollTop / 2;
   $("figure:nth-child(2)").css("transform", "translateY(" + parallax2 + "px)");
-
   var parallax4 = scrollTop / 2;
   $("figure:nth-child(4)").css("transform", "translateY(" + parallax4 + "px)");
-
   var parallax2 = scrollTop / 2;
   $("figure:nth-child(6)").css("transform", "translateY(" + parallax2 + "px)");
-
   var parallax2 = scrollTop / 2;
   $("figure:nth-child(8)").css("transform", "translateY(" + parallax2 + "px)");
   var parallax2 = scrollTop / 2;
   $("figure:nth-child(10)").css("transform", "translateY(" + parallax2 + "px)");
-
   var parallax2 = scrollTop / 2;
   $("figure:nth-child(12)").css("transform", "translateY(" + parallax2 + "px)");
   var parallax2 = scrollTop / 2;
   $("figure:nth-child(13)").css("transform", "translateY(" + parallax2 + "px)");
   var parallax2 = scrollTop / 2;
   $("figure:nth-child(15)").css("transform", "translateY(" + parallax2 + "px)");
-
   var parallax2 = scrollTop / 2;
   $("figure:nth-child(17)").css("transform", "translateY(" + parallax2 + "px)");
   var parallax2 = scrollTop / 2;
