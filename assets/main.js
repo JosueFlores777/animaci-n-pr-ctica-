@@ -22,6 +22,34 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 
 
 
+/* */
+
+  var lastScrollTop = 0;
+
+  function handleVideoZoom() {
+    var scrollPosition = window.scrollY;
+    var scrollDirection = scrollPosition > lastScrollTop ? 'down' : 'up';
+    lastScrollTop = scrollPosition;
+
+    var videoContainer = document.querySelector('.video-container');
+
+    // Modificamos la lógica aquí para ajustar el comportamiento según tus especificaciones
+    if (scrollDirection === 'down' && scrollPosition > 200) {
+      videoContainer.classList.add('zoom1');
+    } else {
+      videoContainer.classList.remove('zoom1');
+    }
+  }
+
+  // Llamar a la función handleVideoZoom() cuando se desplaza la página
+  window.addEventListener('scroll', handleVideoZoom);
+
+  // Llamar a la función handleVideoZoom() cuando la página se carga por primera vez
+  document.addEventListener('DOMContentLoaded', handleVideoZoom);
+
+
+
+/* */
 
 function addAnimation() {
   scrollers.forEach((scroller) => {

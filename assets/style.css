@@ -422,7 +422,24 @@ h2 {
   margin: 36px;
 }
 
+/*video*/
+.video-container {
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+}
 
+.video-container iframe {
+  width: 800px;
+  height: 450px;
+  transition: width 0.5s, height 0.5s, transform 0.5s;
+}
+
+.video-container.zoom1 iframe {
+  width: 450px;
+  height: 250px;
+  transform: scale(1.2);
+}
 
 /**/
 
