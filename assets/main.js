@@ -56,34 +56,36 @@ document.addEventListener('DOMContentLoaded', handleVideoZoom);
 
 /* */
 
-
 $(window).scroll(function () {
   var scrollTop = $(window).scrollTop();
-  var parallax2 = scrollTop / 2;
-  $("figure:nth-child(2)").css("transform", "translateY(" + parallax2 + "px)");
-  var parallax4 = scrollTop / 2;
-  $("figure:nth-child(4)").css("transform", "translateY(" + parallax4 + "px)");
-  var parallax3 = scrollTop / 2;
-  $("figure:nth-child(6)").css("transform", "translateY(" + parallax3 + "px)");
-  var parallax2 = scrollTop / 2;
-  $("figure:nth-child(8)").css("transform", "translateY(" + parallax2 + "px)");
-  var parallax2 = scrollTop / 2;
-  $("figure:nth-child(10)").css("transform", "translateY(" + parallax2 + "px)");
-  var parallax2 = scrollTop / 2;
-  $("figure:nth-child(12)").css("transform", "translateY(" + parallax2 + "px)");
-  var parallax2 = scrollTop / 2;
-  $("figure:nth-child(13)").css("transform", "translateY(" + parallax2 + "px)");
-  var parallax2 = scrollTop / 2;
-  $("figure:nth-child(15)").css("transform", "translateY(" + parallax2 + "px)");
-  var parallax2 = scrollTop / 2;
-  $("figure:nth-child(17)").css("transform", "translateY(" + parallax2 + "px)");
-  var parallax2 = scrollTop / 2;
-  $("figure:nth-child(19)").css("transform", "translateY(" + parallax2 + "px)");
-  var parallax2 = scrollTop / 2;
-  $("figure:nth-child(21)").css("transform", "translateY(" + parallax2 + "px)");
-  var parallax2 = scrollTop / 2;
-  $("figure:nth-child(23)").css("transform", "translateY(" + parallax2 + "px)");
+  var parallax = scrollTop / 2;
+
+  if ($(window).width() <= 1024) {
+    $("figure:nth-child(2)").css("transform", "translateY(" + parallax + "px)");
+    $("figure:nth-child(5)").css("transform", "translateY(" + parallax + "px)");
+    $("figure:nth-child(8)").css("transform", "translateY(" + parallax + "px)");
+    $("figure:nth-child(8)").css("transform", "translateY(" + parallax + "px)");
+    $("figure:nth-child(11)").css("transform", "translateY(" + parallax + "px)");
+    $("figure:nth-child(12)").css("transform", "translateY(" + parallax + "px)");
+    $("figure:nth-child(14)").css("transform", "translateY(" + parallax + "px)");
+    $("figure:nth-child(17)").css("transform", "translateY(" + parallax + "px)");
+    $("figure:nth-child(20)").css("transform", "translateY(" + parallax + "px)");
+    $("figure:nth-child(23)").css("transform", "translateY(" + parallax + "px)");
+    $("figure:nth-child(26)").css("transform", "translateY(" + parallax + "px)");
+    $("figure:nth-child(29)").css("transform", "translateY(" + parallax + "px)");
+  } else {
+    $("figure:nth-child(2)").css("transform", "translateY(" + parallax + "px)");
+    $("figure:nth-child(4)").css("transform", "translateY(" + parallax + "px)");
+    $("figure:nth-child(6)").css("transform", "translateY(" + parallax + "px)");
+    $("figure:nth-child(8)").css("transform", "translateY(" + parallax + "px)");
+    $("figure:nth-child(10)").css("transform", "translateY(" + parallax + "px)");
+    $("figure:nth-child(13)").css("transform", "translateY(" + parallax + "px)");
+    $("figure:nth-child(15)").css("transform", "translateY(" + parallax + "px)");
+   
+  }
 });
+
+
 
 
 
