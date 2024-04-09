@@ -21,9 +21,20 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 }
 
 
+function addAnimation() {
+  scrollers.forEach((scroller) => {
+    scroller.setAttribute("data-animated", true);
+    const scrollerInner = scroller.querySelector(".scroller__inner");
+    const scrollerContent = Array.from(scrollerInner.children);
+    scrollerContent.forEach((item) => {
+      const duplicatedItem = item.cloneNode(true);
+      duplicatedItem.setAttribute("aria-hidden", true);
+      scrollerInner.appendChild(duplicatedItem);
+    });
+  });
+}
 
 /* */
-
   var lastScrollTop = 0;
 
   function handleVideoZoom() {
@@ -40,29 +51,11 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       videoContainer.classList.remove('zoom1');
     }
   }
-
-  // Llamar a la función handleVideoZoom() cuando se desplaza la página
-  window.addEventListener('scroll', handleVideoZoom);
-
-  // Llamar a la función handleVideoZoom() cuando la página se carga por primera vez
-  document.addEventListener('DOMContentLoaded', handleVideoZoom);
-
-
+window.addEventListener('scroll', handleVideoZoom);
+document.addEventListener('DOMContentLoaded', handleVideoZoom);
 
 /* */
 
-function addAnimation() {
-  scrollers.forEach((scroller) => {
-    scroller.setAttribute("data-animated", true);
-    const scrollerInner = scroller.querySelector(".scroller__inner");
-    const scrollerContent = Array.from(scrollerInner.children);
-    scrollerContent.forEach((item) => {
-      const duplicatedItem = item.cloneNode(true);
-      duplicatedItem.setAttribute("aria-hidden", true);
-      scrollerInner.appendChild(duplicatedItem);
-    });
-  });
-}
 
 $(window).scroll(function () {
   var scrollTop = $(window).scrollTop();
@@ -70,8 +63,8 @@ $(window).scroll(function () {
   $("figure:nth-child(2)").css("transform", "translateY(" + parallax2 + "px)");
   var parallax4 = scrollTop / 2;
   $("figure:nth-child(4)").css("transform", "translateY(" + parallax4 + "px)");
-  var parallax2 = scrollTop / 2;
-  $("figure:nth-child(6)").css("transform", "translateY(" + parallax2 + "px)");
+  var parallax3 = scrollTop / 2;
+  $("figure:nth-child(6)").css("transform", "translateY(" + parallax3 + "px)");
   var parallax2 = scrollTop / 2;
   $("figure:nth-child(8)").css("transform", "translateY(" + parallax2 + "px)");
   var parallax2 = scrollTop / 2;
@@ -91,3 +84,6 @@ $(window).scroll(function () {
   var parallax2 = scrollTop / 2;
   $("figure:nth-child(23)").css("transform", "translateY(" + parallax2 + "px)");
 });
+
+
+
