@@ -66,7 +66,6 @@ $(window).scroll(function () {
     $("figure:nth-child(8)").css("transform", "translateY(" + parallax + "px)");
     $("figure:nth-child(8)").css("transform", "translateY(" + parallax + "px)");
     $("figure:nth-child(11)").css("transform", "translateY(" + parallax + "px)");
-    $("figure:nth-child(12)").css("transform", "translateY(" + parallax + "px)");
     $("figure:nth-child(14)").css("transform", "translateY(" + parallax + "px)");
     $("figure:nth-child(17)").css("transform", "translateY(" + parallax + "px)");
     $("figure:nth-child(20)").css("transform", "translateY(" + parallax + "px)");
@@ -79,9 +78,13 @@ $(window).scroll(function () {
     $("figure:nth-child(6)").css("transform", "translateY(" + parallax + "px)");
     $("figure:nth-child(8)").css("transform", "translateY(" + parallax + "px)");
     $("figure:nth-child(10)").css("transform", "translateY(" + parallax + "px)");
+    $("figure:nth-child(12)").css("transform", "translateY(" + parallax + "px)");
     $("figure:nth-child(13)").css("transform", "translateY(" + parallax + "px)");
     $("figure:nth-child(15)").css("transform", "translateY(" + parallax + "px)");
-   
+    $("figure:nth-child(17)").css("transform", "translateY(" + parallax + "px)");
+    $("figure:nth-child(19)").css("transform", "translateY(" + parallax + "px)");
+    $("figure:nth-child(21)").css("transform", "translateY(" + parallax + "px)");
+    $("figure:nth-child(23)").css("transform", "translateY(" + parallax + "px)");
   }
 });
 
