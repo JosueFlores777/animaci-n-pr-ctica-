@@ -7,6 +7,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:200" rel="stylesheet">
     <link rel="stylesheet" href="test.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 </head>
 <body>
 <div class="containerL">
@@ -25,17 +29,17 @@
             </div>
         </div>
     </div>
-    <div class="fullscreen-background top-up" id="fullscreen-background"></div>
+    <div class="fullscreen-background top-up " id="fullscreen-background"></div>
    
     <div class="scroller" id="scroller">
      
-        <div class="box on-top" id="big-box">
-           
-            <h1 id="selected-box-name"></h1>
-            <img id="big-box-image" src="" alt="">
+        <div class="box on-top animate__animated animate__backInUp" id="big-box">
             <a class="close-button" onclick="clearSelection()">
                 <i class="material-icons">close</i>
             </a>
+            <h1 id="selected-box-name"></h1>
+            <img id="big-box-image" src="" alt="">
+         
             <div class="content">
                 <h2>Lorem ipsum dolor</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis quam vel ante bibendum sodales non in justo. In est velit, fermentum sit amet auctor nec, pellentesque sit amet dolor. Vestibulum lectus justo, tincidunt vitae convallis quis, aliquam sed quam. Sed lectus felis, feugiat ut turpis vel, convallis aliquam eros. Nam scelerisque nec eros sit amet elementum. Sed maximus euismod lectus, et semper massa facilisis sed. Nunc rutrum, sapien quis volutpat tincidunt, lorem massa hendrerit nisl, non rhoncus ligula orci et diam. Aenean diam enim, porttitor et augue eget, mollis vestibulum diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam mauris velit, ornare eget lacinia in, efficitur vel justo.
@@ -92,9 +96,9 @@ function clearSelection() {
     document.getElementById("scroller").scrollTop = 0;
     document.getElementById("scroller").style.display = "none";
     document.getElementById("fullscreen-background").style.backgroundImage = "none";
-
-
 }
+
+
 document.getElementById("scroller").addEventListener("scroll", function() {
     var scrollPosition = this.scrollTop;
     var paddingValue = scrollPosition > 0 ? 0 : 60;
