@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="test.css">
 </head>
 <body>
-<div class="container">
+<div class="containerL">
     <div class="page">
         <div class="grid">
             <div class="grid-item" id="box1">
@@ -18,16 +18,24 @@
                 </div>
             </div>
             <!-- Repeat the grid-item for other boxes -->
+            <div class="grid-item" id="box2">
+                <div class="box" onclick="selectBox(2)">
+                    <img src="https://images.unsplash.com/photo-1712675670807-f925abe035b3?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                </div>
+            </div>
         </div>
     </div>
     <div class="fullscreen-background top-up" id="fullscreen-background"></div>
+   
     <div class="scroller" id="scroller">
-        <a class="close-button" onclick="clearSelection()">
-            <i class="material-icons">close</i>
-        </a>
-        <h1 id="selected-box-name"></h1>
+     
         <div class="box on-top" id="big-box">
+           
+            <h1 id="selected-box-name"></h1>
             <img id="big-box-image" src="" alt="">
+            <a class="close-button" onclick="clearSelection()">
+                <i class="material-icons">close</i>
+            </a>
             <div class="content">
                 <h2>Lorem ipsum dolor</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis quam vel ante bibendum sodales non in justo. In est velit, fermentum sit amet auctor nec, pellentesque sit amet dolor. Vestibulum lectus justo, tincidunt vitae convallis quis, aliquam sed quam. Sed lectus felis, feugiat ut turpis vel, convallis aliquam eros. Nam scelerisque nec eros sit amet elementum. Sed maximus euismod lectus, et semper massa facilisis sed. Nunc rutrum, sapien quis volutpat tincidunt, lorem massa hendrerit nisl, non rhoncus ligula orci et diam. Aenean diam enim, porttitor et augue eget, mollis vestibulum diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam mauris velit, ornare eget lacinia in, efficitur vel justo.
@@ -61,31 +69,39 @@
 </div>
 
 <script >
-// JavaScript logic goes here
 var boxes = [
     {
         name: 'Friends',
         image: 'https://source.unsplash.com/uAgLGG1WBd4/900x900'
     },
-    // Add other box objects here
+    {
+        name: 'test 2',
+        image: 'https://images.unsplash.com/photo-1712675670807-f925abe035b3?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    },
+
 ];
 
 function selectBox(index) {
-    var selectedBox = boxes[index - 1]; // Arrays are zero-indexed
-    document.getElementById("fullscreen-background").style.backgroundImage = "url('" + selectedBox.image + "')";
+    var selectedBox = boxes[index - 1]; 
     document.getElementById("scroller").style.display = "block";
     document.getElementById("selected-box-name").textContent = selectedBox.name;
     document.getElementById("big-box-image").src = selectedBox.image;
 }
 
 function clearSelection() {
+    document.getElementById("scroller").scrollTop = 0;
     document.getElementById("scroller").style.display = "none";
+    document.getElementById("fullscreen-background").style.backgroundImage = "none";
+
+
 }
 document.getElementById("scroller").addEventListener("scroll", function() {
     var scrollPosition = this.scrollTop;
     var paddingValue = scrollPosition > 0 ? 0 : 60;
     this.style.padding = paddingValue + "px";
 });
+
+
 
 </script>
 </body>
