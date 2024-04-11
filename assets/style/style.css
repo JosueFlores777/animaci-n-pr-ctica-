@@ -112,38 +112,50 @@ body {
 .contedorGrid {
   position: absolute;
   background-color: #ffffff !important;
-  padding: 10px;
+  padding: 1px;
   border-radius: 45px;
   text-align: center; 
   display: flex;
   margin: 0 auto; 
+  align-items: center;
   margin-top: -90px !important;
-  margin-left: 95px;
+  margin-left: 220px;
+}
+.marginGeneraltes{
+  margin-left: 30%;
+  margin-right: 0;
 }
 
+/*
+.marginGeneraltes{
+  margin-left: 30%;
+  margin-right: 0;
+}*/
 
 .image-caption {
+
   color: #fffcfc; 
-  padding: 10px;
   border-radius: 45px;
   background-color: #000000;
-  padding: 10px;
+  padding: 1px;
 }
 
 .image-caption2 {
+  
   color: #000000; 
   display: inline;
   margin-left: 1px; 
 }
 .image-caption,
   .image-caption2 {
-    padding: 12px;
+    
+    padding: 8px;
     border-radius: 45px;
-    margin: 0 5px;
+    margin: 0 2px;
   }
 
   .image-caption2 {
-    margin-left: -5px;
+    margin-left: -10px;
     font-size: 19px;
     padding: 12px;
     border-radius: 45px;
@@ -189,13 +201,7 @@ body {
 #card3 {
   --index: 3;
 }
-.containerL {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 1rem; /* Puedes ajustar este valor según tus necesidades */
-  padding-left: 1rem; /* Puedes ajustar este valor según tus necesidades */
-}
+
 #card4 {
   --index: 4;
 }
@@ -378,9 +384,10 @@ h2 {
 }
 
 .video-container.zoom1 iframe {
-  width: 450px;
-  height: 250px;
-  transform: scale(1.2);
+  width: 490px;
+  height: 390px;
+  transform: scale(1);
+  transition: all 3s ease;
 }
 
 .hidden1 {

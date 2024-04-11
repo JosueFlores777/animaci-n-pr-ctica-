@@ -9,7 +9,6 @@ var boxes = [
     },
 
 ];
-
 function selectBox(index) {
     var selectedBox = boxes[index - 1]; 
     document.getElementById("scroller").style.display = "block";
@@ -17,7 +16,10 @@ function selectBox(index) {
     document.getElementById("big-box-image").src = selectedBox.image;
 }
 
+
+
 function clearSelection() {
+    
     document.getElementById("scroller").scrollTop = 0;
     document.getElementById("scroller").style.display = "none";
     document.getElementById("fullscreen-background").style.backgroundImage = "none";

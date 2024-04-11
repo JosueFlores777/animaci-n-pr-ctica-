@@ -135,9 +135,33 @@ figure {
     grid-column: 1;
   }
 
+  @media (max-width: 1800px) {
+    .contedorGrid {
+      margin-left: 80px;
+    }
+
+  }
+
+  @media (max-width: 1500px) {
+    .contedorGrid {
+      margin-left: 80px;
+    }
+
+  }
+
+  @media (max-width: 1300px) {
+    .contedorGrid {
+  
+      margin-left: 20px;
+    }
+
+  }
 
   @media (max-width: 1024px) {
+    .contedorGrid {
   
+      margin-left: 90px;
+    }
     .GridParallax {
         display: grid;
         grid-template-columns: repeat(3, 1fr);

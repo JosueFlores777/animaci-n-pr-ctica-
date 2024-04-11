@@ -45,7 +45,7 @@ function addAnimation() {
     var videoContainer = document.querySelector('.video-container');
 
     // Modificamos la lógica aquí para ajustar el comportamiento según tus especificaciones
-    if (scrollDirection === 'down' && scrollPosition > 200) {
+    if (scrollDirection === 'down' && scrollPosition > 300) {
       videoContainer.classList.add('zoom1');
     } else {
       videoContainer.classList.remove('zoom1');
